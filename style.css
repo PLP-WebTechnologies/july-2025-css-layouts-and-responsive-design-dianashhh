@@ -1,0 +1,373 @@
+/* ===========================
+   Reset & Base
+   =========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+:root {
+    --color-bg: #0b1020;
+    --color-surface: #111827;
+    --color-elevated: #0f172a;
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-text: #e5e7eb;
+    --color-muted: #9ca3af;
+    --color-accent: #3b82f6;
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+
+    --container-max: 1200px;
+}
+
+body {
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+    line-height: 1.6;
+    color: var(--color-text);
+    background: radial-gradient(1200px 800px at 10% -10%, #1f2937 0%, transparent 60%),
+                radial-gradient(1000px 700px at 110% 10%, #111827 0%, transparent 60%),
+                var(--color-bg);
+}
+
+img, svg, video {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--space-4);
+}
+
+/* ===========================
+   Header (Flexbox)
+   =========================== */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(17, 24, 39, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.header-content {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding: var(--space-4) var(--space-4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+}
+
+.logo {
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    letter-spacing: 0.5px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: clamp(var(--space-3), 2vw, var(--space-6));
+}
+
+.nav-list a {
+    color: var(--color-text);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
+}
+
+.nav-list a:hover {
+    background: rgba(255, 255, 255, 0.06);
+    text-decoration: none;
+}
+
+.menu-toggle {
+    display: none; /* Kept for future JS enhancement */
+}
+
+/* ===========================
+   Main Layout (CSS Grid)
+   =========================== */
+.main-container {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding: var(--space-8) var(--space-4);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "hero"
+        "main"
+        "sidebar"
+        "footer";
+    gap: var(--space-8);
+}
+
+.hero { grid-area: hero; }
+.main-content { grid-area: main; }
+.sidebar { grid-area: sidebar; }
+.footer { grid-area: footer; }
+
+/* ===========================
+   Hero
+   =========================== */
+.hero {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background:
+        radial-gradient(800px 400px at 20% 10%, rgba(59, 130, 246, 0.15), transparent 60%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+    box-shadow: var(--shadow-md);
+    min-height: 40vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: var(--space-12) var(--space-6);
+}
+
+.hero-content h2 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    margin-bottom: var(--space-3);
+}
+
+.hero-content p {
+    color: var(--color-muted);
+    margin-bottom: var(--space-6);
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    border: none;
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: transform 0.12s ease, filter 0.12s ease;
+}
+
+.cta-button:hover { transform: translateY(-1px); filter: brightness(1.05); }
+.cta-button:active { transform: translateY(0); filter: brightness(0.98); }
+
+/* ===========================
+   About / Feature Cards (Flexbox)
+   =========================== */
+.about-section {
+    display: grid;
+    gap: var(--space-6);
+}
+
+.feature-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-6);
+}
+
+.card {
+    flex: 1 1 260px;
+    background: var(--color-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+}
+
+.card-icon {
+    font-size: 1.75rem;
+    margin-bottom: var(--space-3);
+}
+
+.card h3 {
+    margin-bottom: var(--space-2);
+}
+
+.card p {
+    color: var(--color-muted);
+}
+
+/* ===========================
+   Services (CSS Grid)
+   =========================== */
+.services-section {
+    margin-top: var(--space-8);
+}
+
+.services-grid {
+    margin-top: var(--space-4);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-6);
+}
+
+.service-item {
+    background: var(--color-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-6);
+}
+
+.service-item p {
+    color: var(--color-muted);
+}
+
+/* ===========================
+   Portfolio (CSS Grid)
+   =========================== */
+.portfolio-section {
+    margin-top: var(--space-8);
+}
+
+.portfolio-grid {
+    margin-top: var(--space-4);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-6);
+}
+
+.portfolio-item {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-6);
+}
+
+.portfolio-item p {
+    color: var(--color-muted);
+}
+
+.portfolio-large {
+    /* Will span columns on larger screens in media query */
+}
+
+/* ===========================
+   Sidebar
+   =========================== */
+.sidebar-content {
+    position: sticky;
+    top: calc(var(--space-8) + 56px);
+    display: grid;
+    gap: var(--space-4);
+}
+
+.sidebar h3 {
+    margin-bottom: var(--space-2);
+}
+
+.news-item {
+    background: var(--color-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+}
+
+.news-item h4 {
+    margin-bottom: var(--space-2);
+}
+
+.news-item p {
+    color: var(--color-muted);
+    margin-bottom: var(--space-2);
+}
+
+.news-item time {
+    color: var(--color-muted);
+    font-size: 0.875rem;
+}
+
+/* ===========================
+   Footer
+   =========================== */
+.footer {
+    border-top: 1px solid var(--color-border);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    padding: var(--space-8) var(--space-4);
+}
+
+.footer-section h3 {
+    margin-bottom: var(--space-3);
+}
+
+.social-links {
+    display: flex;
+    gap: var(--space-4);
+}
+
+.footer-bottom {
+    text-align: center;
+    color: var(--color-muted);
+    padding: var(--space-6) var(--space-4);
+}
+
+/* ===========================
+   Media Queries (RWD)
+   =========================== */
+@media (min-width: 600px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 900px) {
+    .main-container {
+        grid-template-columns: 3fr 1fr;
+        grid-template-areas:
+            "hero hero"
+            "main sidebar"
+            "footer footer";
+    }
+
+    .portfolio-large {
+        grid-column: span 2;
+    }
+}
+
+@media (min-width: 1200px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* ===========================
+   Accessibility helpers
+   =========================== */
+:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--color-accent), white 10%);
+    outline-offset: 2px;
+}

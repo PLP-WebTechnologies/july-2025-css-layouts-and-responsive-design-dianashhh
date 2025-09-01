@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Layout Showcase - Flexbox & Grid</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="logo">LayoutPro</h1>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container using CSS Grid -->
+    <div class="main-container">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h2>Modern Web Layouts</h2>
+                <p>Showcasing the power of Flexbox and CSS Grid for responsive design</p>
+                <button class="cta-button">Get Started</button>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- About Section -->
+            <section class="about-section" id="about">
+                <h2>About Modern Layouts</h2>
+                <p>CSS Grid and Flexbox are powerful layout systems that work together to create flexible, responsive designs. Grid excels at 2D layouts, while Flexbox is perfect for 1D arrangements.</p>
+                
+                <!-- Feature Cards using Flexbox -->
+                <div class="feature-cards">
+                    <div class="card">
+                        <div class="card-icon">🎯</div>
+                        <h3>Precision</h3>
+                        <p>CSS Grid provides precise control over both rows and columns, allowing for complex layouts with exact positioning.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🔧</div>
+                        <h3>Flexibility</h3>
+                        <p>Flexbox offers incredible flexibility for aligning and distributing space among items in a container.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">📱</div>
+                        <h3>Responsive</h3>
+                        <p>Both systems work seamlessly with media queries to create layouts that adapt to any screen size.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section class="services-section" id="services">
+                <h2>Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h3>Web Design</h3>
+                        <p>Creating beautiful, functional websites that engage your audience and drive results.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Responsive Development</h3>
+                        <p>Building websites that work perfectly on all devices, from mobile to desktop.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Performance Optimization</h3>
+                        <p>Ensuring your website loads quickly and provides an excellent user experience.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>SEO Optimization</h3>
+                        <p>Improving your website's visibility in search engines to attract more visitors.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Portfolio Section -->
+            <section class="portfolio-section" id="portfolio">
+                <h2>Portfolio Showcase</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item portfolio-large">
+                        <h3>E-commerce Platform</h3>
+                        <p>A fully responsive online store with modern design</p>
+                    </div>
+                    <div class="portfolio-item">
+                        <h3>Mobile App</h3>
+                        <p>Cross-platform mobile application</p>
+                    </div>
+                    <div class="portfolio-item">
+                        <h3>Corporate Website</h3>
+                        <p>Professional business website</p>
+                    </div>
+                    <div class="portfolio-item">
+                        <h3>Blog Platform</h3>
+                        <p>Content management system</p>
+                    </div>
+                    <div class="portfolio-item">
+                        <h3>Dashboard UI</h3>
+                        <p>Analytics dashboard interface</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <h3>Latest News</h3>
+                <article class="news-item">
+                    <h4>CSS Grid Level 2</h4>
+                    <p>New features coming to CSS Grid that will revolutionize web layouts.</p>
+                    <time>Dec 15, 2024</time>
+                </article>
+                <article class="news-item">
+                    <h4>Flexbox Best Practices</h4>
+                    <p>Learn the most effective ways to use Flexbox in your projects.</p>
+                    <time>Dec 10, 2024</time>
+                </article>
+                <article class="news-item">
+                    <h4>Responsive Design Trends</h4>
+                    <p>The latest trends in responsive web design for 2024.</p>
+                    <time>Dec 5, 2024</time>
+                </article>
+            </div>
+        </aside>
+
+        <!-- Footer -->
+        <footer class="footer" id="contact">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@layoutpro.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#">Twitter</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">GitHub</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Examples</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LayoutPro. All rights reserved. Built with CSS Grid and Flexbox.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
